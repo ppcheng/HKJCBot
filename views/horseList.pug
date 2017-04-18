@@ -1,0 +1,20 @@
+extends layout
+
+block content
+  div(class='content is-small')
+    table(class='table')
+      thead
+        tr
+          th 烙號
+          th 馬名
+          th 現時評分
+          th 評分改動
+      tbody
+        each horse in horses
+          tr
+            th #{horse._id}
+            td
+              a(href=horse.url[1] target='_blink') #{horse.names[0]}/
+              a(href=horse.url[0] target='_blink') #{horse.names[1]}
+            td #{horse.rating.current}
+            td #{horse.rating.change}
